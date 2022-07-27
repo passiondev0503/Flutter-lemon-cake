@@ -1,0 +1,47 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "lib/application/signinform/signinform_bloc.freezed.dart": true,
+        "lib/application/bloc/sign_in_form_bloc.freezed.dart": true,
+        "lib/application/sign_in_form/sign_in_form_bloc.freezed.dart": true,
+        "lib/application/theme_switch/theme_switch_bloc.freezed.dart": true,
+        "lib/domain/auth/auth_failures.freezed.dart": true,
+        "lib/domain/entities/current_user.freezed.dart": true,
+        "lib/infrastructure/auth/entities/current_user_dto.freezed.dart": true,
+        "lib/application/sign_in_form/auth_check/auth_check_bloc.freezed.dart": true,
+        "lib/domain/file_upload/upload_failures.freezed.dart": true,
+        "lib/domain/core/failures.freezed.dart": true,
+        "lib/application/bloc/image_picker_bloc.freezed.dart": true
+    },
+    "hide-files.files": [
+        "lib/application/signinform/signinform_bloc.freezed.dart",
+        "lib/application/bloc/sign_in_form_bloc.freezed.dart",
+        "lib/application/sign_in_form/sign_in_form_bloc.freezed.dart",
+        "lib/application/theme_switch/theme_switch_bloc.freezed.dart",
+        "lib/domain/auth/auth_failures.freezed.dart",
+        "lib/domain/entities/current_user.freezed.dart",
+        "lib/infrastructure/auth/entities/current_user_dto.freezed.dart",
+        "lib/application/sign_in_form/auth_check/auth_check_bloc.freezed.dart",
+        "lib/domain/file_upload/upload_failures.freezed.dart",
+        "lib/domain/core/failures.freezed.dart",
+        "lib/application/bloc/image_picker_bloc.freezed.dart"
+    ],
+    "cSpell.words": [
+        "ARGB",
+        "autocorrect",
+        "autovalidate",
+        "configue",
+        "cupertino",
+        "dartz",
+        "firestore",
+        "Flushbar",
+        "fullname",
+        "nodoc",
+        "Uplaod"
+    ]
+}

@@ -6,6 +6,7 @@ class SignInFormState with _$SignInFormState {
       {required EmailAddress emailAddress,
       required Password password,
       required FullName fullName,
+      // File? imageFile,
       required bool isSubmitting,
       required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       required bool showErrorMessage}) = _SignInFormState;

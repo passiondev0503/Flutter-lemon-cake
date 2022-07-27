@@ -2,8 +2,11 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:avocado/application/image_picker/image_picker_bloc.dart';
-import 'package:avocado/domain/entities/Users.dart';
+import 'package:avocado/infrastructure/file_uplaod/upload.dart';
+import 'package:avocado/presentation/routes/app_router.gr.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,12 +14,18 @@ import 'package:avocado/presentation/core/app_colors.dart';
 import 'package:avocado/presentation/core/app_fonts.dart';
 import 'package:avocado/presentation/widgets/app_button.dart';
 
+import '../../../application/sign_in_form/sign_in_form_bloc.dart';
+import '../../../domain/entities/Users.dart';
+import '../../../infrastructure/auth/entities/User_dto.dart';
+
 class UploadProfileImgPage extends StatelessWidget {
   const UploadProfileImgPage({
     Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     return Scaffold(
       // appBar: AppBar(title: Text(users.fullName)),
       body: SafeArea(
@@ -140,12 +149,24 @@ class UploadProfileImgPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  AppButton(
-                    text: 'Send',
-                    onPress: () {
-                      //TODO profile picture implementation
+                  BlocBuilder<ImagePickerBloc, ImagePickerState>(
+                    builder: (context, state) {
+                      return AppButton(
+                        text: 'SignUp',
+                        onPress: () async {
+                          final imageUrl = await uploadImageToStorage(
+                              childName: 'Profile Image',
+                              imageFile: state.image);
+                          await firebaseFirestore
+                              .collection('Users')
+                              .doc(firebaseAuth.currentUser!.uid)
+                              .update({'profilePic': imageUrl});
+                          context.router.replace(const HomeRoute());
+                        },
+                      );
                     },
-                  ),
+                  )
+
                   // AppButton(text: 'sign out', onPress: () => context.read<SignInFormBloc>().add())
                 ],
               )
@@ -199,13 +220,14 @@ _showDialogue(BuildContext context) {
                                       color: AppColors.buttonColor),
                                 )),
                             AppButton(
-                                text: 'Gallery',
-                                onPress: () {
-                                  context.read<ImagePickerBloc>().add(
-                                        const ImagePickerEvent.galleryPressed(),
-                                      );
-                                  context.router.pop();
-                                }),
+                              text: 'Gallery',
+                              onPress: () {
+                                context.read<ImagePickerBloc>().add(
+                                      const ImagePickerEvent.galleryPressed(),
+                                    );
+                                context.router.pop();
+                              },
+                            ),
                           ],
                         );
                       },

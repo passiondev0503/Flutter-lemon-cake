@@ -12,12 +12,12 @@ import '../pages/auth_pages/upload_image_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: SplashPage),
+    AutoRoute(page: SplashPage, initial: true),
     AutoRoute(page: SignUpPage),
     AutoRoute(page: SignInPage),
     AutoRoute(page: AuthLandingPage),
     AutoRoute(page: OnBoardingPage),
-    AutoRoute(page: UploadProfileImgPage, initial: true),
+    AutoRoute(page: UploadProfileImgPage),
     AutoRoute(page: HomePage),
   ],
 )

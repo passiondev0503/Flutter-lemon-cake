@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:html';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -85,9 +85,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       emit(state.copyWith(
           isSubmitting: true, authFailureOrSuccessOption: none()));
       failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
-          emailAddress: state.emailAddress,
-          password: state.password,
-          fullName: state.fullName);
+        emailAddress: state.emailAddress,
+        password: state.password,
+        fullName: state.fullName,
+      );
     }
     emit(state.copyWith(
         isSubmitting: false,

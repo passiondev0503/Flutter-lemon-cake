@@ -59,12 +59,13 @@ class AppRouter extends _i8.RootStackRouter {
 
   @override
   List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(SplashRoute.name, path: '/splash-page'),
+        _i8.RouteConfig(SplashRoute.name, path: '/'),
         _i8.RouteConfig(SignUpRoute.name, path: '/sign-up-page'),
         _i8.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
         _i8.RouteConfig(AuthLandingRoute.name, path: '/auth-landing-page'),
         _i8.RouteConfig(OnBoardingRoute.name, path: '/on-boarding-page'),
-        _i8.RouteConfig(UploadProfileImgRoute.name, path: '/'),
+        _i8.RouteConfig(UploadProfileImgRoute.name,
+            path: '/upload-profile-img-page'),
         _i8.RouteConfig(HomeRoute.name, path: '/home-page')
       ];
 }
@@ -72,7 +73,7 @@ class AppRouter extends _i8.RootStackRouter {
 /// generated route for
 /// [_i1.SplashPage]
 class SplashRoute extends _i8.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/splash-page');
+  const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
 }
@@ -114,7 +115,8 @@ class OnBoardingRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.UploadProfileImgPage]
 class UploadProfileImgRoute extends _i8.PageRouteInfo<void> {
-  const UploadProfileImgRoute() : super(UploadProfileImgRoute.name, path: '/');
+  const UploadProfileImgRoute()
+      : super(UploadProfileImgRoute.name, path: '/upload-profile-img-page');
 
   static const String name = 'UploadProfileImgRoute';
 }

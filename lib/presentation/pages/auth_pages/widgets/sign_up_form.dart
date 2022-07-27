@@ -34,7 +34,7 @@ class SignUpForm extends StatelessWidget {
                           'Invalid email and password combination',
                     ),
                   ).show(context), (_) {
-            context.router.replace(UploadProfileImgRoute());
+            context.router.replace(const UploadProfileImgRoute());
           }),
         );
       },
@@ -176,10 +176,11 @@ class SignUpForm extends StatelessWidget {
                           state.emailAddress.isValid() &&
                           state.password.isValid()
                       ? () => context.read<SignInFormBloc>().add(
-                          const SignInFormEvent
-                              .registerWithEmailAndPasswordPressed())
+                            const SignInFormEvent
+                                .registerWithEmailAndPasswordPressed(),
+                          )
                       : () {},
-                  text: 'SignUp',
+                  text: 'Continue',
                   color: state.emailAddress.isValid() &&
                           state.password.isValid() &&
                           state.fullName.isValid()

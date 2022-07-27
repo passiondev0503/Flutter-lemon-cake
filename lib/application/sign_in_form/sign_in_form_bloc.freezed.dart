@@ -1242,7 +1242,8 @@ abstract class SignInWithGooglePressed implements SignInFormEvent {
 mixin _$SignInFormState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
-  FullName get fullName => throw _privateConstructorUsedError;
+  FullName get fullName =>
+      throw _privateConstructorUsedError; // File? imageFile,
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
@@ -1396,6 +1397,7 @@ class _$_SignInFormState implements _SignInFormState {
   final Password password;
   @override
   final FullName fullName;
+// File? imageFile,
   @override
   final bool isSubmitting;
   @override
@@ -1457,7 +1459,7 @@ abstract class _SignInFormState implements SignInFormState {
   Password get password;
   @override
   FullName get fullName;
-  @override
+  @override // File? imageFile,
   bool get isSubmitting;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;

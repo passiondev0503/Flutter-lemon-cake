@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';

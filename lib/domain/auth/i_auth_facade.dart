@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:avocado/domain/auth/auth_failures.dart';
 import 'package:avocado/domain/auth/value_object.dart';
 import 'package:avocado/domain/entities/Users.dart';
@@ -13,6 +15,7 @@ abstract class IAuthFacade {
     required EmailAddress emailAddress,
     required Password password,
     required FullName fullName,
+    // required File imageFile,
   });
 
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({

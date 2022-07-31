@@ -23,6 +23,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<EmailChanged>(onEmailChanged);
     on<PasswordChanged>(_onPasswordChanged);
     on<FullNameChanged>(_onFullNameChanged);
+    on<AgeChanged>(_onAgeChanged);
+    on<GenderChanged>(_onGenderChanged);
     on<SignInWithEmailAndPasswordPressed>(_onSignInWithEmailAndPasswordPressed);
     on<RegisterWithEmailAndPasswordPressed>(_onRegWithEmailAndPasswordPressed);
     on<SignInWithGooglePressed>(_onSignInWithGooglePressed);
@@ -81,14 +83,22 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     final emailIsValid = state.emailAddress.isValid();
     final passwordIsValid = state.password.isValid();
     final fullNameIsValid = state.fullName.isValid();
-    if (emailIsValid && passwordIsValid && fullNameIsValid) {
+    final genderIsValid = state.gender.isValid();
+    final ageIsValid = state.age.isValid();
+
+    if (emailIsValid &&
+        passwordIsValid &&
+        fullNameIsValid &&
+        ageIsValid &&
+        genderIsValid) {
       emit(state.copyWith(
           isSubmitting: true, authFailureOrSuccessOption: none()));
       failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
-        emailAddress: state.emailAddress,
-        password: state.password,
-        fullName: state.fullName,
-      );
+          emailAddress: state.emailAddress,
+          password: state.password,
+          fullName: state.fullName,
+          age: state.age,
+          gender: state.gender);
     }
     emit(state.copyWith(
         isSubmitting: false,
@@ -99,5 +109,15 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   FutureOr<void> _onFullNameChanged(
       FullNameChanged event, Emitter<SignInFormState> emit) {
     emit(state.copyWith(fullName: FullName(input: event.fullNameStr)));
+  }
+
+  FutureOr<void> _onAgeChanged(
+      AgeChanged event, Emitter<SignInFormState> emit) {
+    emit(state.copyWith(age: Age(input: event.age)));
+  }
+
+  FutureOr<void> _onGenderChanged(
+      GenderChanged event, Emitter<SignInFormState> emit) {
+    emit(state.copyWith(gender: Gender(input: event.gender)));
   }
 }

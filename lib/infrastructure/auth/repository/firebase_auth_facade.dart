@@ -1,12 +1,8 @@
-import 'dart:io';
-
 import 'package:avocado/domain/auth/auth_failures.dart';
 import 'package:avocado/domain/auth/i_auth_facade.dart';
 import 'package:avocado/domain/entities/Users.dart';
 import 'package:avocado/domain/entities/current_user.dart';
-import 'package:avocado/domain/file_upload/upload.dart';
 import 'package:avocado/infrastructure/auth/entities/User_dto.dart';
-import 'package:avocado/infrastructure/file_uplaod/upload.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:avocado/domain/auth/value_object.dart';
@@ -27,15 +23,19 @@ class FirebaseAuthFacade implements IAuthFacade {
     this._googleSignIn,
   );
   @override
-  Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
-    required EmailAddress emailAddress,
-    required Password password,
-    required FullName fullName,
-    // File? imageFile,
-  }) async {
+  Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
+      {required EmailAddress emailAddress,
+      required Password password,
+      required FullName fullName,
+      required Age age,
+      required Gender gender
+      // File? imageFile,
+      }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final fullNameStr = fullName.getOrCrash();
+    final ageStr = age.getOrCrash();
+    final genderStr = gender.getOrCrash();
 
     try {
       final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
@@ -46,7 +46,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       final Users users = Users(
         fullName: fullNameStr,
         emailAddress: emailAddressStr,
-        age: '',
+        age: ageStr,
+        gender: genderStr,
         city: '',
         profilePic: '',
         community: '',

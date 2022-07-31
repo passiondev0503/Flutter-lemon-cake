@@ -6,7 +6,8 @@ class SignInFormState with _$SignInFormState {
       {required EmailAddress emailAddress,
       required Password password,
       required FullName fullName,
-      // File? imageFile,
+      required Age age,
+      required Gender gender,
       required bool isSubmitting,
       required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       required bool showErrorMessage}) = _SignInFormState;
@@ -15,6 +16,8 @@ class SignInFormState with _$SignInFormState {
       emailAddress: EmailAddress(input: ''),
       password: Password(input: ''),
       fullName: FullName(input: ''),
+      age: Age(input: ''),
+      gender: Gender(input: ''),
       showErrorMessage: false,
       isSubmitting: false,
       authFailureOrSuccessOption: none());

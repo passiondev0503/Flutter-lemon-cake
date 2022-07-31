@@ -22,6 +22,7 @@ mixin _$SignInFormEvent {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -33,6 +34,7 @@ mixin _$SignInFormEvent {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -44,6 +46,7 @@ mixin _$SignInFormEvent {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -56,6 +59,7 @@ mixin _$SignInFormEvent {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -70,6 +74,7 @@ mixin _$SignInFormEvent {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -83,6 +88,7 @@ mixin _$SignInFormEvent {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -179,6 +185,7 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -193,6 +200,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -207,6 +215,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -225,6 +234,7 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -242,6 +252,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -258,6 +269,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -351,6 +363,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -365,6 +378,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -379,6 +393,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -397,6 +412,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -414,6 +430,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -430,6 +447,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -524,6 +542,7 @@ class _$FullNameChanged implements FullNameChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -538,6 +557,7 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -552,6 +572,7 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -570,6 +591,7 @@ class _$FullNameChanged implements FullNameChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -587,6 +609,7 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -603,6 +626,7 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -696,6 +720,7 @@ class _$AgeChanged implements AgeChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -710,6 +735,7 @@ class _$AgeChanged implements AgeChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -724,6 +750,7 @@ class _$AgeChanged implements AgeChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -742,6 +769,7 @@ class _$AgeChanged implements AgeChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -759,6 +787,7 @@ class _$AgeChanged implements AgeChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -775,6 +804,7 @@ class _$AgeChanged implements AgeChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -795,6 +825,183 @@ abstract class AgeChanged implements SignInFormEvent {
   String get age;
   @JsonKey(ignore: true)
   _$$AgeChangedCopyWith<_$AgeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GenderChangedCopyWith<$Res> {
+  factory _$$GenderChangedCopyWith(
+          _$GenderChanged value, $Res Function(_$GenderChanged) then) =
+      __$$GenderChangedCopyWithImpl<$Res>;
+  $Res call({String gender});
+}
+
+/// @nodoc
+class __$$GenderChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$$GenderChangedCopyWith<$Res> {
+  __$$GenderChangedCopyWithImpl(
+      _$GenderChanged _value, $Res Function(_$GenderChanged) _then)
+      : super(_value, (v) => _then(v as _$GenderChanged));
+
+  @override
+  _$GenderChanged get _value => super._value as _$GenderChanged;
+
+  @override
+  $Res call({
+    Object? gender = freezed,
+  }) {
+    return _then(_$GenderChanged(
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenderChanged implements GenderChanged {
+  const _$GenderChanged({required this.gender});
+
+  @override
+  final String gender;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.genderChanged(gender: $gender)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenderChanged &&
+            const DeepCollectionEquality().equals(other.gender, gender));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(gender));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GenderChangedCopyWith<_$GenderChanged> get copyWith =>
+      __$$GenderChangedCopyWithImpl<_$GenderChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
+    required TResult Function() registerWithEmailAndPasswordPressed,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() signInWithGooglePressed,
+  }) {
+    return genderChanged(gender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGooglePressed,
+  }) {
+    return genderChanged?.call(gender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGooglePressed,
+    required TResult orElse(),
+  }) {
+    if (genderChanged != null) {
+      return genderChanged(gender);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
+    required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+  }) {
+    return genderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+  }) {
+    return genderChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    required TResult orElse(),
+  }) {
+    if (genderChanged != null) {
+      return genderChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenderChanged implements SignInFormEvent {
+  const factory GenderChanged({required final String gender}) = _$GenderChanged;
+
+  String get gender;
+  @JsonKey(ignore: true)
+  _$$GenderChangedCopyWith<_$GenderChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -848,6 +1055,7 @@ class _$RegisterWithEmailAndPasswordPressed
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -862,6 +1070,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -876,6 +1085,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -894,6 +1104,7 @@ class _$RegisterWithEmailAndPasswordPressed
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -911,6 +1122,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -927,6 +1139,7 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -996,6 +1209,7 @@ class _$SignInWithEmailAndPasswordPressed
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -1010,6 +1224,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -1024,6 +1239,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -1042,6 +1258,7 @@ class _$SignInWithEmailAndPasswordPressed
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -1059,6 +1276,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -1075,6 +1293,7 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -1141,6 +1360,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String age) ageChanged,
+    required TResult Function(String gender) genderChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGooglePressed,
@@ -1155,6 +1375,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -1169,6 +1390,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String age)? ageChanged,
+    TResult Function(String gender)? genderChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGooglePressed,
@@ -1187,6 +1409,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(FullNameChanged value) fullNameChanged,
     required TResult Function(AgeChanged value) ageChanged,
+    required TResult Function(GenderChanged value) genderChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
@@ -1204,6 +1427,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -1220,6 +1444,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(FullNameChanged value)? fullNameChanged,
     TResult Function(AgeChanged value)? ageChanged,
+    TResult Function(GenderChanged value)? genderChanged,
     TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
@@ -1242,8 +1467,9 @@ abstract class SignInWithGooglePressed implements SignInFormEvent {
 mixin _$SignInFormState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
-  FullName get fullName =>
-      throw _privateConstructorUsedError; // File? imageFile,
+  FullName get fullName => throw _privateConstructorUsedError;
+  Age get age => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
@@ -1263,6 +1489,8 @@ abstract class $SignInFormStateCopyWith<$Res> {
       {EmailAddress emailAddress,
       Password password,
       FullName fullName,
+      Age age,
+      Gender gender,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       bool showErrorMessage});
@@ -1282,6 +1510,8 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? emailAddress = freezed,
     Object? password = freezed,
     Object? fullName = freezed,
+    Object? age = freezed,
+    Object? gender = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
     Object? showErrorMessage = freezed,
@@ -1299,6 +1529,14 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as FullName,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as Age,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -1326,6 +1564,8 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       {EmailAddress emailAddress,
       Password password,
       FullName fullName,
+      Age age,
+      Gender gender,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       bool showErrorMessage});
@@ -1347,6 +1587,8 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? emailAddress = freezed,
     Object? password = freezed,
     Object? fullName = freezed,
+    Object? age = freezed,
+    Object? gender = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
     Object? showErrorMessage = freezed,
@@ -1364,6 +1606,14 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as FullName,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as Age,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -1387,6 +1637,8 @@ class _$_SignInFormState implements _SignInFormState {
       {required this.emailAddress,
       required this.password,
       required this.fullName,
+      required this.age,
+      required this.gender,
       required this.isSubmitting,
       required this.authFailureOrSuccessOption,
       required this.showErrorMessage});
@@ -1397,7 +1649,10 @@ class _$_SignInFormState implements _SignInFormState {
   final Password password;
   @override
   final FullName fullName;
-// File? imageFile,
+  @override
+  final Age age;
+  @override
+  final Gender gender;
   @override
   final bool isSubmitting;
   @override
@@ -1407,7 +1662,7 @@ class _$_SignInFormState implements _SignInFormState {
 
   @override
   String toString() {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, fullName: $fullName, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, showErrorMessage: $showErrorMessage)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, fullName: $fullName, age: $age, gender: $gender, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, showErrorMessage: $showErrorMessage)';
   }
 
   @override
@@ -1419,6 +1674,8 @@ class _$_SignInFormState implements _SignInFormState {
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.fullName, fullName) &&
+            const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.gender, gender) &&
             const DeepCollectionEquality()
                 .equals(other.isSubmitting, isSubmitting) &&
             const DeepCollectionEquality().equals(
@@ -1433,6 +1690,8 @@ class _$_SignInFormState implements _SignInFormState {
       const DeepCollectionEquality().hash(emailAddress),
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(fullName),
+      const DeepCollectionEquality().hash(age),
+      const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(authFailureOrSuccessOption),
       const DeepCollectionEquality().hash(showErrorMessage));
@@ -1448,6 +1707,8 @@ abstract class _SignInFormState implements SignInFormState {
       {required final EmailAddress emailAddress,
       required final Password password,
       required final FullName fullName,
+      required final Age age,
+      required final Gender gender,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption,
@@ -1459,7 +1720,11 @@ abstract class _SignInFormState implements SignInFormState {
   Password get password;
   @override
   FullName get fullName;
-  @override // File? imageFile,
+  @override
+  Age get age;
+  @override
+  Gender get gender;
+  @override
   bool get isSubmitting;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;

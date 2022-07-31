@@ -10,6 +10,8 @@ class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.fullNameChanged({required String fullNameStr}) =
       FullNameChanged;
   const factory SignInFormEvent.ageChanged({required String age}) = AgeChanged;
+  const factory SignInFormEvent.genderChanged({required String gender}) =
+      GenderChanged;
   const factory SignInFormEvent.registerWithEmailAndPasswordPressed() =
       RegisterWithEmailAndPasswordPressed;
   const factory SignInFormEvent.signInWithEmailAndPasswordPressed() =

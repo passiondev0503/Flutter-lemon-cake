@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Users {
   String get fullName => throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
   String get age => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get profilePic => throw _privateConstructorUsedError;
@@ -35,6 +36,7 @@ abstract class $UsersCopyWith<$Res> {
   $Res call(
       {String fullName,
       String emailAddress,
+      String gender,
       String age,
       String city,
       String profilePic,
@@ -54,6 +56,7 @@ class _$UsersCopyWithImpl<$Res> implements $UsersCopyWith<$Res> {
   $Res call({
     Object? fullName = freezed,
     Object? emailAddress = freezed,
+    Object? gender = freezed,
     Object? age = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
@@ -68,6 +71,10 @@ class _$UsersCopyWithImpl<$Res> implements $UsersCopyWith<$Res> {
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as String,
       age: age == freezed
           ? _value.age
@@ -101,6 +108,7 @@ abstract class _$$_UsersCopyWith<$Res> implements $UsersCopyWith<$Res> {
   $Res call(
       {String fullName,
       String emailAddress,
+      String gender,
       String age,
       String city,
       String profilePic,
@@ -121,6 +129,7 @@ class __$$_UsersCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res>
   $Res call({
     Object? fullName = freezed,
     Object? emailAddress = freezed,
+    Object? gender = freezed,
     Object? age = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
@@ -135,6 +144,10 @@ class __$$_UsersCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as String,
       age: age == freezed
           ? _value.age
@@ -166,6 +179,7 @@ class _$_Users extends _Users {
   const _$_Users(
       {required this.fullName,
       required this.emailAddress,
+      required this.gender,
       required this.age,
       required this.city,
       required this.profilePic,
@@ -177,6 +191,8 @@ class _$_Users extends _Users {
   final String fullName;
   @override
   final String emailAddress;
+  @override
+  final String gender;
   @override
   final String age;
   @override
@@ -190,7 +206,7 @@ class _$_Users extends _Users {
 
   @override
   String toString() {
-    return 'Users(fullName: $fullName, emailAddress: $emailAddress, age: $age, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
+    return 'Users(fullName: $fullName, emailAddress: $emailAddress, gender: $gender, age: $age, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
   }
 
   @override
@@ -201,6 +217,7 @@ class _$_Users extends _Users {
             const DeepCollectionEquality().equals(other.fullName, fullName) &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality().equals(other.gender, gender) &&
             const DeepCollectionEquality().equals(other.age, age) &&
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality()
@@ -215,6 +232,7 @@ class _$_Users extends _Users {
       runtimeType,
       const DeepCollectionEquality().hash(fullName),
       const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(age),
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(profilePic),
@@ -231,6 +249,7 @@ abstract class _Users extends Users {
   const factory _Users(
       {required final String fullName,
       required final String emailAddress,
+      required final String gender,
       required final String age,
       required final String city,
       required final String profilePic,
@@ -242,6 +261,8 @@ abstract class _Users extends Users {
   String get fullName;
   @override
   String get emailAddress;
+  @override
+  String get gender;
   @override
   String get age;
   @override

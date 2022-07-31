@@ -1,4 +1,3 @@
-import 'package:avocado/domain/auth/value_object.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'Users.freezed.dart';
 
@@ -9,6 +8,7 @@ abstract class Users with _$Users {
   const factory Users(
       {required String fullName,
       required String emailAddress,
+      required String gender,
       required String age,
       required String city,
       required String profilePic,

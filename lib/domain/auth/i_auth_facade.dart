@@ -8,14 +8,12 @@ import 'package:dartz/dartz.dart';
 abstract class IAuthFacade {
   Future<Option<CurrentUser>> getSignedInUser();
 
-  // Future<Option<CurrentUser>> upLoadProfilePic();
-
-  Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
-    required EmailAddress emailAddress,
-    required Password password,
-    required FullName fullName,
-    // File? imageFile,
-  });
+  Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
+      {required EmailAddress emailAddress,
+      required Password password,
+      required FullName fullName,
+      required Age age,
+      required Gender gender});
 
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
     required EmailAddress emailAddress,

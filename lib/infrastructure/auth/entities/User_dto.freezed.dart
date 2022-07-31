@@ -23,6 +23,7 @@ mixin _$UserDto {
   String get fullName => throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
   String get age => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get profilePic => throw _privateConstructorUsedError;
   String get community => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $UserDtoCopyWith<$Res> {
       {String fullName,
       String emailAddress,
       String age,
+      String gender,
       String city,
       String profilePic,
       String community,
@@ -60,6 +62,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object? fullName = freezed,
     Object? emailAddress = freezed,
     Object? age = freezed,
+    Object? gender = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
@@ -77,6 +80,10 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as String,
       city: city == freezed
           ? _value.city
@@ -108,6 +115,7 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       {String fullName,
       String emailAddress,
       String age,
+      String gender,
       String city,
       String profilePic,
       String community,
@@ -128,6 +136,7 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object? fullName = freezed,
     Object? emailAddress = freezed,
     Object? age = freezed,
+    Object? gender = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
@@ -145,6 +154,10 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as String,
       city: city == freezed
           ? _value.city
@@ -173,6 +186,7 @@ class _$_UserDto extends _UserDto {
       {required this.fullName,
       required this.emailAddress,
       required this.age,
+      required this.gender,
       required this.city,
       required this.profilePic,
       required this.community,
@@ -189,6 +203,8 @@ class _$_UserDto extends _UserDto {
   @override
   final String age;
   @override
+  final String gender;
+  @override
   final String city;
   @override
   final String profilePic;
@@ -199,7 +215,7 @@ class _$_UserDto extends _UserDto {
 
   @override
   String toString() {
-    return 'UserDto(fullName: $fullName, emailAddress: $emailAddress, age: $age, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
+    return 'UserDto(fullName: $fullName, emailAddress: $emailAddress, age: $age, gender: $gender, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
   }
 
   @override
@@ -211,6 +227,7 @@ class _$_UserDto extends _UserDto {
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.gender, gender) &&
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality()
                 .equals(other.profilePic, profilePic) &&
@@ -226,6 +243,7 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(fullName),
       const DeepCollectionEquality().hash(emailAddress),
       const DeepCollectionEquality().hash(age),
+      const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(profilePic),
       const DeepCollectionEquality().hash(community),
@@ -249,6 +267,7 @@ abstract class _UserDto extends UserDto {
       {required final String fullName,
       required final String emailAddress,
       required final String age,
+      required final String gender,
       required final String city,
       required final String profilePic,
       required final String community,
@@ -263,6 +282,8 @@ abstract class _UserDto extends UserDto {
   String get emailAddress;
   @override
   String get age;
+  @override
+  String get gender;
   @override
   String get city;
   @override

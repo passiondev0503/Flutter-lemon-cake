@@ -8,9 +8,13 @@ class AppTheme {
     colorScheme: const ColorScheme.dark(),
     scaffoldBackgroundColor: AppColors.darkBackGroundColor,
     inputDecorationTheme: InputDecorationTheme(
+      iconColor: AppColors.brandColor,
+      focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: const BorderSide(color: AppColors.brandColor)),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+          borderRadius: BorderRadius.circular(20),
+          borderSide: const BorderSide(color: AppColors.brandColor)),
     ),
     textTheme: GoogleFonts.openSansTextTheme(),
     appBarTheme: const AppBarTheme(
@@ -29,10 +33,13 @@ class AppTheme {
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.lightBackGroundColor,
       inputDecorationTheme: InputDecorationTheme(
-        iconColor: AppColors.buttonColor,
+        iconColor: AppColors.brandColor,
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(color: AppColors.brandColor)),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+            borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(color: AppColors.brandColor)),
       ),
       textTheme: GoogleFonts.openSansTextTheme(),
       appBarTheme: const AppBarTheme(

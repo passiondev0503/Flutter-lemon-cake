@@ -17,4 +17,7 @@ class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.invalidAge({required T failedValue}) =
       InvalidAge<T>;
+
+  const factory ValueFailure.emptyGender({required T failedValue}) =
+      EmptyGender<T>;
 }

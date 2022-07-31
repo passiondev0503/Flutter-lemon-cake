@@ -32,3 +32,22 @@ class FullName extends ValueObject<String> {
 
   const FullName._(this.value);
 }
+
+class Age extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory Age({required String input}) => Age._(validateAge(input));
+
+  const Age._(this.value);
+}
+
+class Gender extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory Gender({required String input}) =>
+      Gender._(validateEmptyGender(input));
+
+  const Gender._(this.value);
+}

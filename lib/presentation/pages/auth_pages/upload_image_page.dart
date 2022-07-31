@@ -9,14 +9,9 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:avocado/presentation/core/app_colors.dart';
 import 'package:avocado/presentation/core/app_fonts.dart';
 import 'package:avocado/presentation/widgets/app_button.dart';
-
-import '../../../application/sign_in_form/sign_in_form_bloc.dart';
-import '../../../domain/entities/Users.dart';
-import '../../../infrastructure/auth/entities/User_dto.dart';
 
 class UploadProfileImgPage extends StatelessWidget {
   const UploadProfileImgPage({

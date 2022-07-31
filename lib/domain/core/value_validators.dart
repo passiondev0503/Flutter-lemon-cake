@@ -29,9 +29,17 @@ Either<ValueFailure<String>, String> validateFullName(String input) {
 }
 
 Either<ValueFailure<String>, String> validateAge(String input) {
-  if (input.contains(RegExp('/d'))) {
+  if (input.length >= 2) {
     return right(input);
   } else {
     return left(ValueFailure.invalidAge(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateEmptyGender(String input) {
+  if (input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.emptyGender(failedValue: input));
   }
 }

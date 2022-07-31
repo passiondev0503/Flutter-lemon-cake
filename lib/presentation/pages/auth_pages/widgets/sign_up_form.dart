@@ -2,7 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:avocado/application/sign_in_form/sign_in_form_bloc.dart';
 import 'package:avocado/presentation/core/app_colors.dart';
 import 'package:avocado/presentation/core/app_fonts.dart';
+import 'package:avocado/presentation/pages/auth_pages/widgets/dropdowntext.dart';
 import 'package:avocado/presentation/widgets/app_button.dart';
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_flushbar/flutter_flushbar.dart';
@@ -145,36 +147,64 @@ class SignUpForm extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                // TextFormField(
-                //   keyboardType: TextInputType.number,
-                //   decoration: const InputDecoration(
-                //     hintText: '18',
-                //     prefixIcon: Icon(Icons.numbers),
-                //   ),
-                //   onChanged: (value) => context
-                //       .read<SignInFormBloc>()
-                //       .add(SignInFormEvent.ageChanged(age: value)),
-                //   validator: (_) => context
-                //       .read<SignInFormBloc>()
-                //       .state
-                //       .age
-                //       .value
-                //       .fold(
-                //           (f) => f.maybeMap(
-                //               invalidAge: (_) => 'age can’t be empty',
-                //               orElse: () => null),
-                //           (r) => null),
-                // ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    hintText: '18',
+                    prefixIcon: Icon(Icons.numbers),
+                  ),
+                  onChanged: (value) => context
+                      .read<SignInFormBloc>()
+                      .add(SignInFormEvent.ageChanged(age: value)),
+                  validator: (_) => context
+                      .read<SignInFormBloc>()
+                      .state
+                      .age
+                      .value
+                      .fold(
+                          (f) => f.maybeMap(
+                              invalidAge: (_) => 'age can’t be empty',
+                              orElse: () => null),
+                          (r) => null),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                const Text(
+                  'Gender',
+                  style: AppFonts.bodyText,
+                ),
                 const SizedBox(
                   height: 10,
                 ),
+                const GenderDropDown(),
+                // DropDownTextField(
+                //   dropDownList: const [
+                //     DropDownValueModel(name: 'male', value: 'male'),
+                //     DropDownValueModel(name: 'female', value: 'female')
+                //   ],
+                //   dropDownItemCount: 2,
+                //   onChanged: (gender) => context
+                //       .read<SignInFormBloc>()
+                //       .add(SignInFormEvent.genderChanged(gender: gender)),
+                //   validator: (_) =>
+                //       context.read<SignInFormBloc>().state.gender.value.fold(
+                //             (f) => f.maybeMap(
+                //               emptyGender: (_) => 'gender can not be empty',
+                //               orElse: () => null,
+                //             ),
+                //             (_) => null,
+                //           ),
+                // ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.07,
                 ),
                 AppButton(
-                  onPress: state.fullName.isValid() &&
-                          state.emailAddress.isValid() &&
-                          state.password.isValid()
+                  onPress: state.emailAddress.isValid() &&
+                          state.password.isValid() &&
+                          state.fullName.isValid() &&
+                          state.age.isValid() &&
+                          state.gender.isValid()
                       ? () => context.read<SignInFormBloc>().add(
                             const SignInFormEvent
                                 .registerWithEmailAndPasswordPressed(),
@@ -183,7 +213,9 @@ class SignUpForm extends StatelessWidget {
                   text: 'Continue',
                   color: state.emailAddress.isValid() &&
                           state.password.isValid() &&
-                          state.fullName.isValid()
+                          state.fullName.isValid() &&
+                          state.age.isValid() &&
+                          state.gender.isValid()
                       ? AppColors.brandColor
                       : Colors.grey,
                 ),

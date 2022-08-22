@@ -12,8 +12,11 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = ShortPassword<T>;
 
-  const factory ValueFailure.invalidFullName({required T failedValue}) =
-      InvalidFullName<T>;
+  const factory ValueFailure.invalidFirstName({required T failedValue}) =
+      InvalidFirstName<T>;
+
+  const factory ValueFailure.invalidLastName({required T failedValue}) =
+      InvalidLastName<T>;
 
   const factory ValueFailure.invalidAge({required T failedValue}) =
       InvalidAge<T>;

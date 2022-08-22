@@ -5,7 +5,8 @@ class SignInFormState with _$SignInFormState {
   const factory SignInFormState(
       {required EmailAddress emailAddress,
       required Password password,
-      required FullName fullName,
+      required FirstName firstName,
+      required LastName lastName,
       required Age age,
       required Gender gender,
       required bool isSubmitting,
@@ -15,7 +16,8 @@ class SignInFormState with _$SignInFormState {
   factory SignInFormState.initial() => SignInFormState(
       emailAddress: EmailAddress(input: ''),
       password: Password(input: ''),
-      fullName: FullName(input: ''),
+      firstName : FirstName(input: ''),
+      lastName: LastName(input: ''),
       age: Age(input: ''),
       gender: Gender(input: ''),
       showErrorMessage: false,

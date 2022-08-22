@@ -806,6 +806,9 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.2)
+  - image_cropper (0.0.4):
+    - Flutter
+    - TOCropViewController (~> 2.6.1)
   - image_picker_ios (0.0.1):
     - Flutter
   - leveldb-library (1.22.1)
@@ -866,6 +869,7 @@ PODS:
     - Flutter
   - PromisesObjC (2.1.1)
   - Protobuf (3.21.3)
+  - TOCropViewController (2.6.1)
 
 DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
@@ -876,6 +880,7 @@ DEPENDENCIES:
   - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
   - google_ml_vision (from `.symlinks/plugins/google_ml_vision/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
+  - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
 
@@ -924,6 +929,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - TOCropViewController
 
 EXTERNAL SOURCES:
   cloud_firestore:
@@ -942,6 +948,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_ml_vision/ios"
   google_sign_in_ios:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
+  image_cropper:
+    :path: ".symlinks/plugins/image_cropper/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   path_provider_ios:
@@ -984,6 +992,7 @@ SPEC CHECKSUMS:
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMAppAuth: 4d8f864896f3646f0c33baf38a28362f4c601e15
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
+  image_cropper: 60c2789d1f1a78c873235d4319ca0c34a69f2d98
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
@@ -1001,6 +1010,7 @@ SPEC CHECKSUMS:
   path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Protobuf: 25e5dd0944f6f05a4db360eed782af5dc9533633
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
 PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 

@@ -20,13 +20,16 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserDto {
-  String get fullName => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
   String get age => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get profilePic => throw _privateConstructorUsedError;
-  String get community => throw _privateConstructorUsedError;
+  List<String> get community => throw _privateConstructorUsedError;
+  List<String> get groups => throw _privateConstructorUsedError;
   DateTime get registrationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,13 +42,16 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res>;
   $Res call(
-      {String fullName,
+      {String uid,
+      String firstName,
+      String lastName,
       String emailAddress,
       String age,
       String gender,
       String city,
       String profilePic,
-      String community,
+      List<String> community,
+      List<String> groups,
       DateTime registrationDate});
 }
 
@@ -59,19 +65,30 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? uid = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? emailAddress = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
+    Object? groups = freezed,
     Object? registrationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -96,7 +113,11 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       community: community == freezed
           ? _value.community
           : community // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
+      groups: groups == freezed
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       registrationDate: registrationDate == freezed
           ? _value.registrationDate
           : registrationDate // ignore: cast_nullable_to_non_nullable
@@ -112,13 +133,16 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       __$$_UserDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String fullName,
+      {String uid,
+      String firstName,
+      String lastName,
       String emailAddress,
       String age,
       String gender,
       String city,
       String profilePic,
-      String community,
+      List<String> community,
+      List<String> groups,
       DateTime registrationDate});
 }
 
@@ -133,19 +157,30 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? uid = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? emailAddress = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
+    Object? groups = freezed,
     Object? registrationDate = freezed,
   }) {
     return _then(_$_UserDto(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -168,9 +203,13 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
           : profilePic // ignore: cast_nullable_to_non_nullable
               as String,
       community: community == freezed
-          ? _value.community
+          ? _value._community
           : community // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
+      groups: groups == freezed
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       registrationDate: registrationDate == freezed
           ? _value.registrationDate
           : registrationDate // ignore: cast_nullable_to_non_nullable
@@ -183,21 +222,30 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
-      {required this.fullName,
+      {required this.uid,
+      required this.firstName,
+      required this.lastName,
       required this.emailAddress,
       required this.age,
       required this.gender,
       required this.city,
       required this.profilePic,
-      required this.community,
+      required final List<String> community,
+      required final List<String> groups,
       required this.registrationDate})
-      : super._();
+      : _community = community,
+        _groups = groups,
+        super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
       _$$_UserDtoFromJson(json);
 
   @override
-  final String fullName;
+  final String uid;
+  @override
+  final String firstName;
+  @override
+  final String lastName;
   @override
   final String emailAddress;
   @override
@@ -208,14 +256,26 @@ class _$_UserDto extends _UserDto {
   final String city;
   @override
   final String profilePic;
+  final List<String> _community;
   @override
-  final String community;
+  List<String> get community {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_community);
+  }
+
+  final List<String> _groups;
+  @override
+  List<String> get groups {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
+
   @override
   final DateTime registrationDate;
 
   @override
   String toString() {
-    return 'UserDto(fullName: $fullName, emailAddress: $emailAddress, age: $age, gender: $gender, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
+    return 'UserDto(uid: $uid, firstName: $firstName, lastName: $lastName, emailAddress: $emailAddress, age: $age, gender: $gender, city: $city, profilePic: $profilePic, community: $community, groups: $groups, registrationDate: $registrationDate)';
   }
 
   @override
@@ -223,7 +283,9 @@ class _$_UserDto extends _UserDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserDto &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality().equals(other.age, age) &&
@@ -231,7 +293,9 @@ class _$_UserDto extends _UserDto {
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality()
                 .equals(other.profilePic, profilePic) &&
-            const DeepCollectionEquality().equals(other.community, community) &&
+            const DeepCollectionEquality()
+                .equals(other._community, _community) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
             const DeepCollectionEquality()
                 .equals(other.registrationDate, registrationDate));
   }
@@ -240,13 +304,16 @@ class _$_UserDto extends _UserDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(fullName),
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
       const DeepCollectionEquality().hash(emailAddress),
       const DeepCollectionEquality().hash(age),
       const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(profilePic),
-      const DeepCollectionEquality().hash(community),
+      const DeepCollectionEquality().hash(_community),
+      const DeepCollectionEquality().hash(_groups),
       const DeepCollectionEquality().hash(registrationDate));
 
   @JsonKey(ignore: true)
@@ -264,20 +331,27 @@ class _$_UserDto extends _UserDto {
 
 abstract class _UserDto extends UserDto {
   const factory _UserDto(
-      {required final String fullName,
+      {required final String uid,
+      required final String firstName,
+      required final String lastName,
       required final String emailAddress,
       required final String age,
       required final String gender,
       required final String city,
       required final String profilePic,
-      required final String community,
+      required final List<String> community,
+      required final List<String> groups,
       required final DateTime registrationDate}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String get fullName;
+  String get uid;
+  @override
+  String get firstName;
+  @override
+  String get lastName;
   @override
   String get emailAddress;
   @override
@@ -289,7 +363,9 @@ abstract class _UserDto extends UserDto {
   @override
   String get profilePic;
   @override
-  String get community;
+  List<String> get community;
+  @override
+  List<String> get groups;
   @override
   DateTime get registrationDate;
   @override

@@ -1,7 +1,6 @@
 import 'package:avocado/domain/auth/auth_failures.dart';
 import 'package:avocado/domain/auth/i_auth_facade.dart';
-import 'package:avocado/domain/entities/Users.dart';
-import 'package:avocado/domain/entities/current_user.dart';
+
 import 'package:avocado/infrastructure/auth/entities/User_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -9,7 +8,10 @@ import 'package:avocado/domain/auth/value_object.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:avocado/domain/entities/firebase_users_helper.dart';
+
+import '../../../domain/auth/entities/Users.dart';
+import '../../../domain/auth/entities/current_user.dart';
+import '../../../domain/auth/entities/firebase_users_helper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
@@ -26,31 +28,32 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
       {required EmailAddress emailAddress,
       required Password password,
-      required FullName fullName,
+      required FirstName firstName,
+      required LastName lastName,
       required Age age,
-      required Gender gender
-      // File? imageFile,
-      }) async {
+      required Gender gender}) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
-    final fullNameStr = fullName.getOrCrash();
+    final firstNameStr = firstName.getOrCrash();
+    final lastNameStr = lastName.getOrCrash();
     final ageStr = age.getOrCrash();
     final genderStr = gender.getOrCrash();
 
     try {
       final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
           email: emailAddressStr, password: passwordStr);
-      // final imageUrl = uploadImageToStorage(
-      //     childName: 'Profile images', imageFile: imageFile);
 
       final Users users = Users(
-        fullName: fullNameStr,
+        firstName: firstNameStr,
+        lastName: lastNameStr,
+        uid: userCredential.user!.uid,
         emailAddress: emailAddressStr,
         age: ageStr,
         gender: genderStr,
         city: '',
         profilePic: '',
-        community: '',
+        community: [],
+        groups: [],
         registrationDate: DateTime.now(),
       );
       final UserDto userDto = UserDto.fromDomain(users);
@@ -58,6 +61,10 @@ class FirebaseAuthFacade implements IAuthFacade {
           .collection('Users')
           .doc(userCredential.user!.uid)
           .set(userDto.toJson());
+      // _firebaseFirestore
+      //     .collection('Users')
+      //     .doc(userCredential.user!.uid)
+      //     .update({'uid': userCredential.user!.uid});
       return right(unit);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -22,7 +21,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   ) : super(SignInFormState.initial()) {
     on<EmailChanged>(onEmailChanged);
     on<PasswordChanged>(_onPasswordChanged);
-    on<FullNameChanged>(_onFullNameChanged);
+    on<FirstNameChanged>(_onFirstNameChanged);
+    on<LastNameChanged>(_onLastNameChanged);
     on<AgeChanged>(_onAgeChanged);
     on<GenderChanged>(_onGenderChanged);
     on<SignInWithEmailAndPasswordPressed>(_onSignInWithEmailAndPasswordPressed);
@@ -69,10 +69,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       SignInWithGooglePressed event, Emitter<SignInFormState> emit) async {
     emit(
         state.copyWith(isSubmitting: true, authFailureOrSuccessOption: none()));
-    final failurOrSuccess = await _authFacade.signInWithGoogle();
+    final failureOrSuccess = await _authFacade.signInWithGoogle();
     emit(state.copyWith(
         isSubmitting: false,
-        authFailureOrSuccessOption: some(failurOrSuccess)));
+        authFailureOrSuccessOption: some(failureOrSuccess)));
   }
 
   FutureOr<void> _onRegWithEmailAndPasswordPressed(
@@ -82,13 +82,15 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
     final emailIsValid = state.emailAddress.isValid();
     final passwordIsValid = state.password.isValid();
-    final fullNameIsValid = state.fullName.isValid();
+    final firstNameIsValid = state.firstName.isValid();
+    final lastNameValid = state.lastName.isValid();
     final genderIsValid = state.gender.isValid();
     final ageIsValid = state.age.isValid();
 
     if (emailIsValid &&
         passwordIsValid &&
-        fullNameIsValid &&
+        firstNameIsValid &&
+        lastNameValid &&
         ageIsValid &&
         genderIsValid) {
       emit(state.copyWith(
@@ -96,7 +98,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
           emailAddress: state.emailAddress,
           password: state.password,
-          fullName: state.fullName,
+          firstName: state.firstName,
+          lastName: state.lastName,
           age: state.age,
           gender: state.gender);
     }
@@ -106,18 +109,30 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         authFailureOrSuccessOption: optionOf(failureOrSuccess)));
   }
 
-  FutureOr<void> _onFullNameChanged(
-      FullNameChanged event, Emitter<SignInFormState> emit) {
-    emit(state.copyWith(fullName: FullName(input: event.fullNameStr)));
+  FutureOr<void> _onFirstNameChanged(
+      FirstNameChanged event, Emitter<SignInFormState> emit) {
+    emit(state.copyWith(
+        firstName: FirstName(input: event.firstNameStr),
+        authFailureOrSuccessOption: none()));
   }
 
   FutureOr<void> _onAgeChanged(
       AgeChanged event, Emitter<SignInFormState> emit) {
-    emit(state.copyWith(age: Age(input: event.age)));
+    emit(state.copyWith(
+        age: Age(input: event.age), authFailureOrSuccessOption: none()));
   }
 
   FutureOr<void> _onGenderChanged(
       GenderChanged event, Emitter<SignInFormState> emit) {
-    emit(state.copyWith(gender: Gender(input: event.gender)));
+    emit(state.copyWith(
+        gender: Gender(input: event.gender),
+        authFailureOrSuccessOption: none()));
+  }
+
+  FutureOr<void> _onLastNameChanged(
+      LastNameChanged event, Emitter<SignInFormState> emit) {
+    emit(state.copyWith(
+        lastName: LastName(input: event.lastNameStr),
+        authFailureOrSuccessOption: none()));
   }
 }

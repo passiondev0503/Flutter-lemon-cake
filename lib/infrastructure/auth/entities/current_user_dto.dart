@@ -1,5 +1,6 @@
-import 'package:avocado/domain/entities/current_user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../domain/auth/entities/current_user.dart';
 
 part 'current_user_dto.freezed.dart';
 

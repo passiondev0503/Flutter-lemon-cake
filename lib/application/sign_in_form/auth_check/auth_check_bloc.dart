@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../domain/entities/current_user.dart';
+import '../../../domain/auth/entities/current_user.dart';
 
 part 'auth_check_event.dart';
 part 'auth_check_state.dart';

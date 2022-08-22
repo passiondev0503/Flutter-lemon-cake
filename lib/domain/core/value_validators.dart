@@ -20,11 +20,19 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validateFullName(String input) {
+Either<ValueFailure<String>, String> validateFirstName(String input) {
   if (input.length >= 3) {
     return right(input);
   } else {
-    return left(ValueFailure.invalidFullName(failedValue: input));
+    return left(ValueFailure.invalidFirstName(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateLastName(String input) {
+  if (input.length >= 3) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidLastName(failedValue: input));
   }
 }
 

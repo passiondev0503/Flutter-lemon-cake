@@ -6,12 +6,15 @@ abstract class Users with _$Users {
   const Users._();
 
   const factory Users(
-      {required String fullName,
+      {required String uid,
+      required String firstName,
+      required String lastName,
       required String emailAddress,
       required String gender,
       required String age,
       required String city,
       required String profilePic,
-      required String community,
+      required List<String> community,
+      required List<String> groups,
       required DateTime registrationDate}) = _Users;
 }

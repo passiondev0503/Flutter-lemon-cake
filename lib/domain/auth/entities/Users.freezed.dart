@@ -16,13 +16,16 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Users {
-  String get fullName => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
   String get age => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get profilePic => throw _privateConstructorUsedError;
-  String get community => throw _privateConstructorUsedError;
+  List<String> get community => throw _privateConstructorUsedError;
+  List<String> get groups => throw _privateConstructorUsedError;
   DateTime get registrationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,13 +37,16 @@ abstract class $UsersCopyWith<$Res> {
   factory $UsersCopyWith(Users value, $Res Function(Users) then) =
       _$UsersCopyWithImpl<$Res>;
   $Res call(
-      {String fullName,
+      {String uid,
+      String firstName,
+      String lastName,
       String emailAddress,
       String gender,
       String age,
       String city,
       String profilePic,
-      String community,
+      List<String> community,
+      List<String> groups,
       DateTime registrationDate});
 }
 
@@ -54,19 +60,30 @@ class _$UsersCopyWithImpl<$Res> implements $UsersCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? uid = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? emailAddress = freezed,
     Object? gender = freezed,
     Object? age = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
+    Object? groups = freezed,
     Object? registrationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -91,7 +108,11 @@ class _$UsersCopyWithImpl<$Res> implements $UsersCopyWith<$Res> {
       community: community == freezed
           ? _value.community
           : community // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
+      groups: groups == freezed
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       registrationDate: registrationDate == freezed
           ? _value.registrationDate
           : registrationDate // ignore: cast_nullable_to_non_nullable
@@ -106,13 +127,16 @@ abstract class _$$_UsersCopyWith<$Res> implements $UsersCopyWith<$Res> {
       __$$_UsersCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String fullName,
+      {String uid,
+      String firstName,
+      String lastName,
       String emailAddress,
       String gender,
       String age,
       String city,
       String profilePic,
-      String community,
+      List<String> community,
+      List<String> groups,
       DateTime registrationDate});
 }
 
@@ -127,19 +151,30 @@ class __$$_UsersCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? uid = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? emailAddress = freezed,
     Object? gender = freezed,
     Object? age = freezed,
     Object? city = freezed,
     Object? profilePic = freezed,
     Object? community = freezed,
+    Object? groups = freezed,
     Object? registrationDate = freezed,
   }) {
     return _then(_$_Users(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -162,9 +197,13 @@ class __$$_UsersCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res>
           : profilePic // ignore: cast_nullable_to_non_nullable
               as String,
       community: community == freezed
-          ? _value.community
+          ? _value._community
           : community // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
+      groups: groups == freezed
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       registrationDate: registrationDate == freezed
           ? _value.registrationDate
           : registrationDate // ignore: cast_nullable_to_non_nullable
@@ -177,18 +216,27 @@ class __$$_UsersCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res>
 
 class _$_Users extends _Users {
   const _$_Users(
-      {required this.fullName,
+      {required this.uid,
+      required this.firstName,
+      required this.lastName,
       required this.emailAddress,
       required this.gender,
       required this.age,
       required this.city,
       required this.profilePic,
-      required this.community,
+      required final List<String> community,
+      required final List<String> groups,
       required this.registrationDate})
-      : super._();
+      : _community = community,
+        _groups = groups,
+        super._();
 
   @override
-  final String fullName;
+  final String uid;
+  @override
+  final String firstName;
+  @override
+  final String lastName;
   @override
   final String emailAddress;
   @override
@@ -199,14 +247,26 @@ class _$_Users extends _Users {
   final String city;
   @override
   final String profilePic;
+  final List<String> _community;
   @override
-  final String community;
+  List<String> get community {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_community);
+  }
+
+  final List<String> _groups;
+  @override
+  List<String> get groups {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groups);
+  }
+
   @override
   final DateTime registrationDate;
 
   @override
   String toString() {
-    return 'Users(fullName: $fullName, emailAddress: $emailAddress, gender: $gender, age: $age, city: $city, profilePic: $profilePic, community: $community, registrationDate: $registrationDate)';
+    return 'Users(uid: $uid, firstName: $firstName, lastName: $lastName, emailAddress: $emailAddress, gender: $gender, age: $age, city: $city, profilePic: $profilePic, community: $community, groups: $groups, registrationDate: $registrationDate)';
   }
 
   @override
@@ -214,7 +274,9 @@ class _$_Users extends _Users {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Users &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality().equals(other.gender, gender) &&
@@ -222,7 +284,9 @@ class _$_Users extends _Users {
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality()
                 .equals(other.profilePic, profilePic) &&
-            const DeepCollectionEquality().equals(other.community, community) &&
+            const DeepCollectionEquality()
+                .equals(other._community, _community) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
             const DeepCollectionEquality()
                 .equals(other.registrationDate, registrationDate));
   }
@@ -230,13 +294,16 @@ class _$_Users extends _Users {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(fullName),
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
       const DeepCollectionEquality().hash(emailAddress),
       const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(age),
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(profilePic),
-      const DeepCollectionEquality().hash(community),
+      const DeepCollectionEquality().hash(_community),
+      const DeepCollectionEquality().hash(_groups),
       const DeepCollectionEquality().hash(registrationDate));
 
   @JsonKey(ignore: true)
@@ -247,18 +314,25 @@ class _$_Users extends _Users {
 
 abstract class _Users extends Users {
   const factory _Users(
-      {required final String fullName,
+      {required final String uid,
+      required final String firstName,
+      required final String lastName,
       required final String emailAddress,
       required final String gender,
       required final String age,
       required final String city,
       required final String profilePic,
-      required final String community,
+      required final List<String> community,
+      required final List<String> groups,
       required final DateTime registrationDate}) = _$_Users;
   const _Users._() : super._();
 
   @override
-  String get fullName;
+  String get uid;
+  @override
+  String get firstName;
+  @override
+  String get lastName;
   @override
   String get emailAddress;
   @override
@@ -270,7 +344,9 @@ abstract class _Users extends Users {
   @override
   String get profilePic;
   @override
-  String get community;
+  List<String> get community;
+  @override
+  List<String> get groups;
   @override
   DateTime get registrationDate;
   @override

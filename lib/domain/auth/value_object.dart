@@ -23,14 +23,24 @@ class Password extends ValueObject<String> {
   const Password._(this.value);
 }
 
-class FullName extends ValueObject<String> {
+class FirstName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory FullName({required String input}) =>
-      FullName._(validatePassword(input));
+  factory FirstName({required String input}) =>
+      FirstName._(validateFirstName(input));
 
-  const FullName._(this.value);
+  const FirstName._(this.value);
+}
+
+class LastName extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory LastName({required String input}) =>
+      LastName._(validateLastName(input));
+
+  const LastName._(this.value);
 }
 
 class Age extends ValueObject<String> {

@@ -4,6 +4,7 @@ import 'package:avocado/application/theme_switch/theme_switch_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../application/sign_in_form/auth_check/auth_check_bloc.dart';
 import '../../routes/app_router.gr.dart';
 
 class SplashPage extends StatefulWidget {
@@ -39,19 +40,31 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeSwitchBloc, ThemeSwitchState>(
-      builder: (context, state) {
-        return Scaffold(
-          backgroundColor: Colors.black,
-          body: Scaffold(
-            body: Center(
-              child: state.switchValue
-                  ? Image.asset('images/logo.png')
-                  : Image.asset('images/logo2.png'),
-            ),
-          ),
-        );
+    return BlocListener<AuthCheckBloc, AuthCheckState>(
+      listener: (context, state) {
+        state.map(
+            initial: (_) {},
+            authenticated: (_) {
+              // context.router.replace(const HomeRoute());
+            },
+            unauthenticated: (_) {
+              // context.router.replace(const AuthLandingRoute());
+            });
       },
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Scaffold(
+          body: BlocBuilder<ThemeSwitchBloc, ThemeSwitchState>(
+            builder: (context, state) {
+              return Center(
+                child: state.switchValue
+                    ? Image.asset('images/logo.png')
+                    : Image.asset('images/logo2.png'),
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 }

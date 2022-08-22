@@ -1,9 +1,9 @@
-import 'dart:io';
-
 import 'package:avocado/domain/auth/auth_failures.dart';
 import 'package:avocado/domain/auth/value_object.dart';
-import 'package:avocado/domain/entities/current_user.dart';
+
 import 'package:dartz/dartz.dart';
+
+import 'entities/current_user.dart';
 
 abstract class IAuthFacade {
   Future<Option<CurrentUser>> getSignedInUser();
@@ -11,7 +11,8 @@ abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
       {required EmailAddress emailAddress,
       required Password password,
-      required FullName fullName,
+      required FirstName firstName,
+      required LastName lastName,
       required Age age,
       required Gender gender});
 

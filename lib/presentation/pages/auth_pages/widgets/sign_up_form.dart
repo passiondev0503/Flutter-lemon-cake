@@ -4,7 +4,6 @@ import 'package:avocado/presentation/core/app_colors.dart';
 import 'package:avocado/presentation/core/app_fonts.dart';
 import 'package:avocado/presentation/pages/auth_pages/widgets/dropdowntext.dart';
 import 'package:avocado/presentation/widgets/app_button.dart';
-import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_flushbar/flutter_flushbar.dart';
@@ -36,7 +35,7 @@ class SignUpForm extends StatelessWidget {
                           'Invalid email and password combination',
                     ),
                   ).show(context), (_) {
-            context.router.replace(const UploadProfileImgRoute());
+            context.router.replace(const SelectCityRoute());
           }),
         );
       },
@@ -50,7 +49,7 @@ class SignUpForm extends StatelessWidget {
             child: ListView(
               children: [
                 const Text(
-                  'Full Name',
+                  'First Name',
                   style: AppFonts.bodyText,
                 ),
                 const SizedBox(
@@ -60,19 +59,49 @@ class SignUpForm extends StatelessWidget {
                   keyboardType: TextInputType.name,
                   autocorrect: false,
                   decoration: const InputDecoration(
-                      hintText: 'enter full name',
+                      hintText: 'enter first name',
                       prefixIcon: Icon(Icons.person)),
-                  onChanged: (value) => context
-                      .read<SignInFormBloc>()
-                      .add(SignInFormEvent.fullNameChanged(fullNameStr: value)),
+                  onChanged: (value) => context.read<SignInFormBloc>().add(
+                      SignInFormEvent.firstNameChanged(firstNameStr: value)),
                   validator: (_) => context
                       .read<SignInFormBloc>()
                       .state
-                      .fullName
+                      .firstName
                       .value
                       .fold(
                           (f) => f.maybeMap(
-                              invalidFullName: (_) =>
+                              invalidFirstName: (_) =>
+                                  'please enter a valid name',
+                              orElse: () => null),
+                          (r) => null),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                const Text(
+                  'Last Name',
+                  style: AppFonts.bodyText,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.name,
+                  autocorrect: false,
+                  decoration: const InputDecoration(
+                      hintText: 'enter last name',
+                      prefixIcon: Icon(Icons.person)),
+                  onChanged: (value) => context
+                      .read<SignInFormBloc>()
+                      .add(SignInFormEvent.lastNameChanged(lastNameStr: value)),
+                  validator: (_) => context
+                      .read<SignInFormBloc>()
+                      .state
+                      .lastName
+                      .value
+                      .fold(
+                          (f) => f.maybeMap(
+                              invalidLastName: (_) =>
                                   'please enter a valid name',
                               orElse: () => null),
                           (r) => null),
@@ -202,7 +231,8 @@ class SignUpForm extends StatelessWidget {
                 AppButton(
                   onPress: state.emailAddress.isValid() &&
                           state.password.isValid() &&
-                          state.fullName.isValid() &&
+                          state.firstName.isValid() &&
+                          state.lastName.isValid() &&
                           state.age.isValid() &&
                           state.gender.isValid()
                       ? () => context.read<SignInFormBloc>().add(
@@ -213,7 +243,8 @@ class SignUpForm extends StatelessWidget {
                   text: 'Continue',
                   color: state.emailAddress.isValid() &&
                           state.password.isValid() &&
-                          state.fullName.isValid() &&
+                          state.firstName.isValid() &&
+                          state.lastName.isValid() &&
                           state.age.isValid() &&
                           state.gender.isValid()
                       ? AppColors.brandColor

@@ -4,7 +4,11 @@ import 'package:avocado/injection.dart';
 import 'package:avocado/presentation/core/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../application/group_form_bloc/group_form_bloc.dart';
 import '../../application/image_picker/image_picker_bloc.dart';
+import '../../application/select_city/select_city_bloc.dart';
+import '../../application/select_community/select_community_bloc.dart';
+import '../../application/sign_in_form/auth_check/auth_check_bloc.dart';
 import '../routes/app_router.gr.dart';
 
 class AppWidget extends StatelessWidget {
@@ -15,13 +19,15 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => ThemeSwitchBloc(),
-        ),
-        BlocProvider(
-          create: (context) => ImagePickerBloc(),
-        ),
+        BlocProvider(create: (context) => ThemeSwitchBloc()),
+        BlocProvider(create: (context) => getIt<ImagePickerBloc>()),
+        BlocProvider(create: (context) => getIt<GroupFormBloc>()),
+        BlocProvider(create: (context) => getIt<SelectCityBloc>()),
         BlocProvider(create: (context) => getIt<SignInFormBloc>()),
+        BlocProvider(create: (context) => getIt<SelectCommunityBloc>()),
+        BlocProvider(
+            create: (context) => getIt<AuthCheckBloc>()
+              ..add(const AuthCheckEvent.authCheckRequested())),
       ],
       child: BlocBuilder<ThemeSwitchBloc, ThemeSwitchState>(
         builder: (context, state) {

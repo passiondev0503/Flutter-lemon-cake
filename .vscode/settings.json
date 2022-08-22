@@ -16,7 +16,18 @@
         "lib/application/sign_in_form/auth_check/auth_check_bloc.freezed.dart": true,
         "lib/domain/file_upload/upload_failures.freezed.dart": true,
         "lib/domain/core/failures.freezed.dart": true,
-        "lib/application/bloc/image_picker_bloc.freezed.dart": true
+        "lib/application/bloc/image_picker_bloc.freezed.dart": true,
+        "lib/application/select_city/select_city_bloc.freezed.dart": true,
+        "lib/application/select_community/select_community_bloc.freezed.dart": true,
+        "lib/application/image_picker/image_picker_bloc.freezed.dart": true,
+        "lib/infrastructure/auth/entities/User_dto.freezed.dart": true,
+        "lib/infrastructure/auth/entities/User_dto.g.dart": true,
+        "lib/domain/auth/entities/current_user.freezed.dart": true,
+        "lib/domain/auth/entities/Users.freezed.dart": true,
+        "lib/domain/group/entities/group.freezed.dart": true,
+        "lib/domain/group/repository/group_failures.freezed.dart": true,
+        "lib/infrastructure/group/entities/group_dto.freezed.dart": true,
+        "lib/infrastructure/group/entities/group_dto.g.dart": true
     },
     "hide-files.files": [
         "lib/application/signinform/signinform_bloc.freezed.dart",
@@ -29,7 +40,18 @@
         "lib/application/sign_in_form/auth_check/auth_check_bloc.freezed.dart",
         "lib/domain/file_upload/upload_failures.freezed.dart",
         "lib/domain/core/failures.freezed.dart",
-        "lib/application/bloc/image_picker_bloc.freezed.dart"
+        "lib/application/bloc/image_picker_bloc.freezed.dart",
+        "lib/application/select_city/select_city_bloc.freezed.dart",
+        "lib/application/select_community/select_community_bloc.freezed.dart",
+        "lib/application/image_picker/image_picker_bloc.freezed.dart",
+        "lib/infrastructure/auth/entities/User_dto.freezed.dart",
+        "lib/infrastructure/auth/entities/User_dto.g.dart",
+        "lib/domain/auth/entities/current_user.freezed.dart",
+        "lib/domain/auth/entities/Users.freezed.dart",
+        "lib/domain/group/entities/group.freezed.dart",
+        "lib/domain/group/repository/group_failures.freezed.dart",
+        "lib/infrastructure/group/entities/group_dto.freezed.dart",
+        "lib/infrastructure/group/entities/group_dto.g.dart"
     ],
     "cSpell.words": [
         "ARGB",
@@ -46,6 +68,7 @@
         "fullname",
         "Kopenhagen",
         "nodoc",
+        "Surfin",
         "textfield",
         "Uplaod"
     ]

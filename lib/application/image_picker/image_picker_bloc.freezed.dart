@@ -20,18 +20,21 @@ mixin _$ImagePickerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() cameraPressed,
     required TResult Function() galleryPressed,
+    required TResult Function() signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ImagePickerEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_CameraPressed value) cameraPressed,
     required TResult Function(_GalleryPressed value) galleryPressed,
+    required TResult Function(_SignUpPressed value) signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +122,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() cameraPressed,
     required TResult Function() galleryPressed,
+    required TResult Function() signUpPressed,
   }) {
     return cameraPressed();
   }
@@ -125,6 +132,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
   }) {
     return cameraPressed?.call();
   }
@@ -134,6 +142,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
     if (cameraPressed != null) {
@@ -147,6 +156,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_CameraPressed value) cameraPressed,
     required TResult Function(_GalleryPressed value) galleryPressed,
+    required TResult Function(_SignUpPressed value) signUpPressed,
   }) {
     return cameraPressed(this);
   }
@@ -156,6 +166,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
   }) {
     return cameraPressed?.call(this);
   }
@@ -165,6 +176,7 @@ class _$_CameraPressed implements _CameraPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
     if (cameraPressed != null) {
@@ -221,6 +233,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() cameraPressed,
     required TResult Function() galleryPressed,
+    required TResult Function() signUpPressed,
   }) {
     return galleryPressed();
   }
@@ -230,6 +243,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
   }) {
     return galleryPressed?.call();
   }
@@ -239,6 +253,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cameraPressed,
     TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
     if (galleryPressed != null) {
@@ -252,6 +267,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_CameraPressed value) cameraPressed,
     required TResult Function(_GalleryPressed value) galleryPressed,
+    required TResult Function(_SignUpPressed value) signUpPressed,
   }) {
     return galleryPressed(this);
   }
@@ -261,6 +277,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
   }) {
     return galleryPressed?.call(this);
   }
@@ -270,6 +287,7 @@ class _$_GalleryPressed implements _GalleryPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CameraPressed value)? cameraPressed,
     TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
     if (galleryPressed != null) {
@@ -284,9 +302,121 @@ abstract class _GalleryPressed implements ImagePickerEvent {
 }
 
 /// @nodoc
+abstract class _$$_SignUpPressedCopyWith<$Res> {
+  factory _$$_SignUpPressedCopyWith(
+          _$_SignUpPressed value, $Res Function(_$_SignUpPressed) then) =
+      __$$_SignUpPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignUpPressedCopyWithImpl<$Res>
+    extends _$ImagePickerEventCopyWithImpl<$Res>
+    implements _$$_SignUpPressedCopyWith<$Res> {
+  __$$_SignUpPressedCopyWithImpl(
+      _$_SignUpPressed _value, $Res Function(_$_SignUpPressed) _then)
+      : super(_value, (v) => _then(v as _$_SignUpPressed));
+
+  @override
+  _$_SignUpPressed get _value => super._value as _$_SignUpPressed;
+}
+
+/// @nodoc
+
+class _$_SignUpPressed implements _SignUpPressed {
+  const _$_SignUpPressed();
+
+  @override
+  String toString() {
+    return 'ImagePickerEvent.signUpPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignUpPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cameraPressed,
+    required TResult Function() galleryPressed,
+    required TResult Function() signUpPressed,
+  }) {
+    return signUpPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cameraPressed,
+    TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
+  }) {
+    return signUpPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cameraPressed,
+    TResult Function()? galleryPressed,
+    TResult Function()? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (signUpPressed != null) {
+      return signUpPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CameraPressed value) cameraPressed,
+    required TResult Function(_GalleryPressed value) galleryPressed,
+    required TResult Function(_SignUpPressed value) signUpPressed,
+  }) {
+    return signUpPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CameraPressed value)? cameraPressed,
+    TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
+  }) {
+    return signUpPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CameraPressed value)? cameraPressed,
+    TResult Function(_GalleryPressed value)? galleryPressed,
+    TResult Function(_SignUpPressed value)? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (signUpPressed != null) {
+      return signUpPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignUpPressed implements ImagePickerEvent {
+  const factory _SignUpPressed() = _$_SignUpPressed;
+}
+
+/// @nodoc
 mixin _$ImagePickerState {
   File? get image => throw _privateConstructorUsedError;
   bool get isImageLoading => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ImagePickerStateCopyWith<ImagePickerState> get copyWith =>
@@ -298,7 +428,7 @@ abstract class $ImagePickerStateCopyWith<$Res> {
   factory $ImagePickerStateCopyWith(
           ImagePickerState value, $Res Function(ImagePickerState) then) =
       _$ImagePickerStateCopyWithImpl<$Res>;
-  $Res call({File? image, bool isImageLoading});
+  $Res call({File? image, bool isImageLoading, bool isLoading});
 }
 
 /// @nodoc
@@ -314,6 +444,7 @@ class _$ImagePickerStateCopyWithImpl<$Res>
   $Res call({
     Object? image = freezed,
     Object? isImageLoading = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
       image: image == freezed
@@ -323,6 +454,10 @@ class _$ImagePickerStateCopyWithImpl<$Res>
       isImageLoading: isImageLoading == freezed
           ? _value.isImageLoading
           : isImageLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -335,7 +470,7 @@ abstract class _$$_ImagePickerStateCopyWith<$Res>
           _$_ImagePickerState value, $Res Function(_$_ImagePickerState) then) =
       __$$_ImagePickerStateCopyWithImpl<$Res>;
   @override
-  $Res call({File? image, bool isImageLoading});
+  $Res call({File? image, bool isImageLoading, bool isLoading});
 }
 
 /// @nodoc
@@ -353,6 +488,7 @@ class __$$_ImagePickerStateCopyWithImpl<$Res>
   $Res call({
     Object? image = freezed,
     Object? isImageLoading = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_$_ImagePickerState(
       image: image == freezed
@@ -363,6 +499,10 @@ class __$$_ImagePickerStateCopyWithImpl<$Res>
           ? _value.isImageLoading
           : isImageLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -370,16 +510,19 @@ class __$$_ImagePickerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ImagePickerState implements _ImagePickerState {
-  const _$_ImagePickerState({this.image, required this.isImageLoading});
+  const _$_ImagePickerState(
+      {this.image, required this.isImageLoading, required this.isLoading});
 
   @override
   final File? image;
   @override
   final bool isImageLoading;
+  @override
+  final bool isLoading;
 
   @override
   String toString() {
-    return 'ImagePickerState(image: $image, isImageLoading: $isImageLoading)';
+    return 'ImagePickerState(image: $image, isImageLoading: $isImageLoading, isLoading: $isLoading)';
   }
 
   @override
@@ -389,14 +532,16 @@ class _$_ImagePickerState implements _ImagePickerState {
             other is _$_ImagePickerState &&
             const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality()
-                .equals(other.isImageLoading, isImageLoading));
+                .equals(other.isImageLoading, isImageLoading) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(isImageLoading));
+      const DeepCollectionEquality().hash(isImageLoading),
+      const DeepCollectionEquality().hash(isLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -407,12 +552,15 @@ class _$_ImagePickerState implements _ImagePickerState {
 abstract class _ImagePickerState implements ImagePickerState {
   const factory _ImagePickerState(
       {final File? image,
-      required final bool isImageLoading}) = _$_ImagePickerState;
+      required final bool isImageLoading,
+      required final bool isLoading}) = _$_ImagePickerState;
 
   @override
   File? get image;
   @override
   bool get isImageLoading;
+  @override
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$$_ImagePickerStateCopyWith<_$_ImagePickerState> get copyWith =>

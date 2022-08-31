@@ -1,14 +1,16 @@
-import 'package:avocado/domain/auth/auth_failures.dart';
-import 'package:avocado/domain/auth/i_auth_facade.dart';
+
+import 'package:avocado/domain/auth/repository/i_auth_facade.dart';
 
 import 'package:avocado/infrastructure/auth/entities/User_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:avocado/domain/auth/value_object.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../domain/auth/core/auth_failures.dart';
+import '../../../domain/auth/core/value_object.dart';
 import '../../../domain/auth/entities/Users.dart';
 import '../../../domain/auth/entities/current_user.dart';
 import '../../../domain/auth/entities/firebase_users_helper.dart';

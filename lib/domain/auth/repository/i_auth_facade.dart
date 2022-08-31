@@ -1,9 +1,9 @@
-import 'package:avocado/domain/auth/auth_failures.dart';
-import 'package:avocado/domain/auth/value_object.dart';
 
+import 'package:avocado/domain/auth/core/auth_failures.dart';
+import 'package:avocado/domain/auth/core/value_object.dart';
 import 'package:dartz/dartz.dart';
 
-import 'entities/current_user.dart';
+import '../entities/current_user.dart';
 
 abstract class IAuthFacade {
   Future<Option<CurrentUser>> getSignedInUser();

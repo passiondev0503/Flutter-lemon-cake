@@ -1,4 +1,4 @@
-import 'package:avocado/domain/auth/i_auth_facade.dart';
+import 'package:avocado/domain/auth/repository/i_auth_facade.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:avocado/domain/auth/auth_failures.dart';
-import 'package:avocado/domain/auth/i_auth_facade.dart';
-import 'package:avocado/domain/auth/value_object.dart';
+import 'package:avocado/domain/auth/repository/i_auth_facade.dart';
 import 'package:injectable/injectable.dart';
+import '../../domain/auth/core/auth_failures.dart';
+import '../../domain/auth/core/value_object.dart';
 
 part 'sign_in_form_bloc.freezed.dart';
 part 'sign_in_form_event.dart';

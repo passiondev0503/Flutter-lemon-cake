@@ -27,7 +27,8 @@
         "lib/domain/group/entities/group.freezed.dart": true,
         "lib/domain/group/repository/group_failures.freezed.dart": true,
         "lib/infrastructure/group/entities/group_dto.freezed.dart": true,
-        "lib/infrastructure/group/entities/group_dto.g.dart": true
+        "lib/infrastructure/group/entities/group_dto.g.dart": true,
+        "lib/domain/auth/core/auth_failures.freezed.dart": true
     },
     "hide-files.files": [
         "lib/application/signinform/signinform_bloc.freezed.dart",
@@ -51,7 +52,8 @@
         "lib/domain/group/entities/group.freezed.dart",
         "lib/domain/group/repository/group_failures.freezed.dart",
         "lib/infrastructure/group/entities/group_dto.freezed.dart",
-        "lib/infrastructure/group/entities/group_dto.g.dart"
+        "lib/infrastructure/group/entities/group_dto.g.dart",
+        "lib/domain/auth/core/auth_failures.freezed.dart"
     ],
     "cSpell.words": [
         "ARGB",
